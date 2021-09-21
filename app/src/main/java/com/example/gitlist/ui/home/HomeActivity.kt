@@ -40,7 +40,7 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    fun initRepo(list: List<GitRepositories>){
+    fun initRepo(list: GitRepositories){
         adapterGit = GitRepositoryAdapter(this, list)
         repoList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         repoList.adapter = adapterGit

@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 
 class HomeViewModel(val apiHelper: GitRepositoryHelper): ViewModel() {
 
-    private val showRepo = MutableLiveData<Resource<List<GitRepositories>>>()
+    private val showRepo = MutableLiveData<Resource<GitRepositories>>()
 
     init {
         repoData()
@@ -29,7 +29,7 @@ class HomeViewModel(val apiHelper: GitRepositoryHelper): ViewModel() {
         }
     }
 
-    fun getRepositories(): LiveData<Resource<List<GitRepositories>>> {
+    fun getRepositories(): LiveData<Resource<GitRepositories>>{
         return showRepo
     }
 }
