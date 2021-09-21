@@ -24,10 +24,10 @@ class GitRepositoryAdapter(val context: Context, val listRepositories: GitReposi
         fun bind(list: OwnerDetails){
 
             Picasso.with(context).load(list.owner.avatar_url).into(itemView.userAvatar)
-            itemView.name.text = list.name
-            itemView.repoName.text = list.owner.login
-            itemView.stars.text = list.name
-            itemView.numberForks.text = list.forks_count.toString()
+            itemView.name.text = context.getString(R.string.author_name, list.name)
+            itemView.repoName.text = context.getString(R.string.repository_name, list.owner.login)
+            itemView.stars.text = context.getString(R.string.author_name, list.name)
+            itemView.numberForks.text = context.getString(R.string.fork_count, list.forks_count.toString())
         }
     }
 
