@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkUtils {
-    private const val URL_API = "https://api.github.com/search/repositories?q=language:kotlin&sort=stars&page%20=1"
+    private const val URL_API = "https://api.github.com/search/"
 
     private fun getRetrofitInstance() : Retrofit {
         return Retrofit.Builder()

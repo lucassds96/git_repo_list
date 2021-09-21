@@ -4,6 +4,6 @@ import com.example.gitlist.model.GitRepositories
 import retrofit2.http.GET
 
 interface Api {
-    @GET("")
-    fun getRepo(): List<GitRepositories>
+    @GET("repositories?q=language:kotlin&sort=stars&page%20=1")
+    suspend fun getRepo(): List<GitRepositories>
 }
