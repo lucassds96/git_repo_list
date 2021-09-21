@@ -2,6 +2,7 @@ package com.example.gitlist.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -23,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        homePb.visibility = View.VISIBLE
         homeViewModel = ViewModelProvider(this, ViewModelFactory(
             GitRepositoryImpl(NetworkUtils.apiService))
         ).get(HomeViewModel::class.java)
@@ -44,6 +46,7 @@ class HomeActivity : AppCompatActivity() {
         adapterGit = GitRepositoryAdapter(this, list)
         repoList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         repoList.adapter = adapterGit
+        homePb.visibility = View.GONE
     }
 
     fun errorApi(error: String){
